@@ -1,47 +1,73 @@
 import java.awt.Color;
 
 /**
- * This class describes a circle with a given radius and color.
- *
- * @author nanajjar
- * @version Spring 25
+ * The Circle class models a circle with a radius and a color.
+ * It also allows calculation of the area.
+ * 
+ * @author YourName
  */
-
-public class Circle {  
-    // private instance variable, not accessible from outside this class
+public class Circle {
+    /** Radius of the circle */
     private double radius;
+
+    /** Color of the circle */
     private Color color;
+
+    /** Area of the circle */
     private double area;
 
-    // The default constructor with no argument.
-    // It sets the radius and color to their default value.
+    /**
+     * Default constructor.
+     * Sets radius to 1.0 and color to a predefined color.
+     */
     public Circle() {
         radius = 1.0;
-        this.color = new Color(255,119,65);
+        this.color = new Color(255, 119, 65);
     }
 
-    // 2nd constructor with given radius and color
+    /**
+     * Constructs a circle with a given radius and color.
+     * 
+     * @param r    the radius of the circle
+     * @param clr  the color of the circle
+     */
     public Circle(double r, Color clr) {
         radius = r;
         color = clr;
     }
 
-    // A public method for retrieving the radius
+    /**
+     * Returns the radius of the circle.
+     * 
+     * @return the radius
+     */
     public double getRadius() {
         return radius;
     }
 
-    // A public method for retrieving the color of circle
+    /**
+     * Returns the color of the circle.
+     * 
+     * @return the color
+     */
     public Color getColor() {
         return color;
     }
 
-    // A public method for retrieving the area of circle
+    /**
+     * Returns the area of the circle.
+     * Calls calculateArea internally if needed.
+     * 
+     * @return the area
+     */
     public double getArea() {
         calculateArea();
         return area;
     }
-    // A private method for computing the area of circle
+
+    /**
+     * Computes the area of the circle.
+     */
     private void calculateArea() {
         area = radius * radius * Math.PI;
     }
